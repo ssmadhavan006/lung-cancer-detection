@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.vscode/
+.idea/
+*.out.log
+*.err.log
+outputs/.matplotlib/
+outputs/.torch/
+dataset/
