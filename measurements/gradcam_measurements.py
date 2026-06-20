@@ -26,8 +26,20 @@ class LocalizationMeasurements:
 
 
 def _location_from_center(center_x: int, center_y: int, width: int, height: int) -> str:
-    vertical = "Upper" if center_y < height / 3 else "Lower" if center_y > (2 * height) / 3 else "Middle"
-    horizontal = "Left" if center_x < width / 3 else "Right" if center_x > (2 * width) / 3 else "Central"
+    vertical = (
+        "Upper"
+        if center_y < height / 3
+        else "Lower"
+        if center_y > (2 * height) / 3
+        else "Middle"
+    )
+    horizontal = (
+        "Left"
+        if center_x < width / 3
+        else "Right"
+        if center_x > (2 * width) / 3
+        else "Central"
+    )
     if horizontal == "Central":
         return f"{vertical} Central Lung Region"
     return f"{vertical} {horizontal} Lung Region"
@@ -43,7 +55,9 @@ def measure_gradcam_region(
     resized_heatmap = cv2.resize(heatmap.astype(np.float32), (width, height))
     resized_heatmap = np.clip(resized_heatmap, 0.0, 1.0)
 
-    adaptive_threshold = max(float(threshold), float(np.percentile(resized_heatmap, 88)))
+    adaptive_threshold = max(
+        float(threshold), float(np.percentile(resized_heatmap, 88))
+    )
     mask = (resized_heatmap >= adaptive_threshold).astype(np.uint8) * 255
     kernel_size = max(3, int(round(min(width, height) * 0.015)))
     kernel = np.ones((kernel_size, kernel_size), np.uint8)
@@ -134,14 +148,28 @@ def compute_risk_score(
 ) -> tuple[int, str]:
     malignant_probability = probabilities.get("malignant", 0.0)
     benign_probability = probabilities.get("benign", 0.0)
-    activation_component = min(measurements.area_fraction * 250.0, 1.0) if measurements.detected else 0.0
+    activation_component = (
+        min(measurements.area_fraction * 250.0, 1.0) if measurements.detected else 0.0
+    )
 
     if predicted_class == "normal":
-        score = 100.0 * (0.75 * malignant_probability + 0.15 * benign_probability + 0.10 * activation_component)
+        score = 100.0 * (
+            0.75 * malignant_probability
+            + 0.15 * benign_probability
+            + 0.10 * activation_component
+        )
     elif predicted_class == "benign":
-        score = 100.0 * (0.45 * benign_probability + 0.35 * malignant_probability + 0.20 * activation_component)
+        score = 100.0 * (
+            0.45 * benign_probability
+            + 0.35 * malignant_probability
+            + 0.20 * activation_component
+        )
     else:
-        score = 100.0 * (0.75 * malignant_probability + 0.20 * activation_component + 0.05 * benign_probability)
+        score = 100.0 * (
+            0.75 * malignant_probability
+            + 0.20 * activation_component
+            + 0.05 * benign_probability
+        )
 
     score_int = int(round(np.clip(score, 0, 100)))
     category = "Low" if score_int < 35 else "Moderate" if score_int < 70 else "High"
