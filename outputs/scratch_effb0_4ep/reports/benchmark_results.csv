@@ -1,0 +1,2 @@
+model_name,best_epoch,accuracy,precision_weighted,recall_weighted,f1_weighted,roc_auc_ovr_weighted,checkpoint_path
+efficientnet_b0,3,0.4337,0.7947,0.4337,0.4639,0.8018,D:\Coding\lung-cancer-detection\outputs\scratch_effb0_4ep\checkpoints\efficientnet_b0_best.pt

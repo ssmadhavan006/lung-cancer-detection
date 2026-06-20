@@ -1,0 +1,42 @@
+{
+  "requested_split_mode": "auto",
+  "used_split_mode": "slice",
+  "warning": "Auto split selected slice-level validation because reliable case identifiers were not recoverable from the current dataset layout.",
+  "case_grouping": {
+    "recoverable_case_ids": 0,
+    "source_counts": {
+      "unavailable": 1097
+    },
+    "reliable_case_fraction": 0.0,
+    "group_regex": null
+  },
+  "split_sizes": {
+    "train": 767,
+    "val": 164,
+    "test": 166
+  },
+  "class_counts": {
+    "train": {
+      "benign": 84,
+      "malignant": 392,
+      "normal": 291
+    },
+    "val": {
+      "benign": 18,
+      "malignant": 84,
+      "normal": 62
+    },
+    "test": {
+      "benign": 18,
+      "malignant": 85,
+      "normal": 63
+    }
+  },
+  "path_overlap": {
+    "train_val": [],
+    "train_test": [],
+    "val_test": []
+  },
+  "case_overlap": null,
+  "validation_note": "Patient-level leakage is mitigated only when `used_split_mode` is `group` and recoverable case IDs are available."
+}

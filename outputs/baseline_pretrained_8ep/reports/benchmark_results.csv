@@ -1,0 +1,4 @@
+model_name,best_epoch,accuracy,precision_weighted,recall_weighted,f1_weighted,roc_auc_ovr_weighted,checkpoint_path
+efficientnet_b0,7,0.9759,0.9759,0.9759,0.9759,0.9963,D:\Coding\lung-cancer-detection\outputs\baseline_pretrained_8ep\checkpoints\efficientnet_b0_best.pt
+densenet121,8,0.9578,0.9615,0.9578,0.9589,0.9945,D:\Coding\lung-cancer-detection\outputs\baseline_pretrained_8ep\checkpoints\densenet121_best.pt
+resnet50,4,0.9337,0.9342,0.9337,0.9337,0.9894,D:\Coding\lung-cancer-detection\outputs\baseline_pretrained_8ep\checkpoints\resnet50_best.pt

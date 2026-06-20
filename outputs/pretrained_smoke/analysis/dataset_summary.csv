@@ -1,0 +1,4 @@
+class_name,count,percentage
+benign,120,10.94
+malignant,561,51.14
+normal,416,37.92

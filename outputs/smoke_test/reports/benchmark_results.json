@@ -1,0 +1,13 @@
+[
+  {
+    "model_name": "efficientnet_b0",
+    "best_epoch": 1,
+    "test_loss": 1.3226195372730853,
+    "accuracy": 0.1084,
+    "precision_weighted": 0.0118,
+    "recall_weighted": 0.1084,
+    "f1_weighted": 0.0212,
+    "roc_auc_ovr_weighted": 0.5,
+    "checkpoint_path": "D:\\Coding\\lung-cancer-detection\\outputs\\smoke_test\\checkpoints\\efficientnet_b0_best.pt"
+  }
+]

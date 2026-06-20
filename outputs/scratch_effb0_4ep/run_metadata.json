@@ -1,0 +1,32 @@
+{
+  "started_at_unix": 1781782885.3483858,
+  "device": "cuda",
+  "config": {
+    "dataset_dir": "D:\\Coding\\lung-cancer-detection\\dataset",
+    "output_dir": "D:\\Coding\\lung-cancer-detection\\outputs\\scratch_effb0_4ep",
+    "image_size": 224,
+    "batch_size": 16,
+    "epochs": 4,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "patience": 3,
+    "seed": 42,
+    "num_workers": 2,
+    "use_pretrained": false,
+    "models": [
+      "efficientnet_b0"
+    ],
+    "train_ratio": 0.7,
+    "val_ratio": 0.15
+  },
+  "class_names": [
+    "benign",
+    "malignant",
+    "normal"
+  ],
+  "split_sizes": {
+    "train": 767,
+    "val": 164,
+    "test": 166
+  }
+}

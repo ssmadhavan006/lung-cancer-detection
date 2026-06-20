@@ -1,0 +1,11 @@
+{
+  "model_name": "efficientnet_b0",
+  "best_epoch": 7,
+  "test_loss": 0.14760860194822392,
+  "accuracy": 0.9759,
+  "precision_weighted": 0.9759,
+  "recall_weighted": 0.9759,
+  "f1_weighted": 0.9759,
+  "roc_auc_ovr_weighted": 0.9963,
+  "checkpoint_path": "D:\\Coding\\lung-cancer-detection\\outputs\\baseline_pretrained_8ep\\checkpoints\\efficientnet_b0_best.pt"
+}

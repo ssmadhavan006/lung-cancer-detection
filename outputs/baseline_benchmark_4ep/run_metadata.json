@@ -1,0 +1,34 @@
+{
+  "started_at_unix": 1781783151.5737667,
+  "device": "cuda",
+  "config": {
+    "dataset_dir": "D:\\Coding\\lung-cancer-detection\\dataset",
+    "output_dir": "D:\\Coding\\lung-cancer-detection\\outputs\\baseline_benchmark_4ep",
+    "image_size": 224,
+    "batch_size": 16,
+    "epochs": 4,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "patience": 3,
+    "seed": 42,
+    "num_workers": 2,
+    "use_pretrained": false,
+    "models": [
+      "resnet50",
+      "efficientnet_b0",
+      "densenet121"
+    ],
+    "train_ratio": 0.7,
+    "val_ratio": 0.15
+  },
+  "class_names": [
+    "benign",
+    "malignant",
+    "normal"
+  ],
+  "split_sizes": {
+    "train": 767,
+    "val": 164,
+    "test": 166
+  }
+}
